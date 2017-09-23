@@ -7,9 +7,9 @@ def get():
 
 class TestLib(unittest.TestCase):
     
-    @patch('__main__.datetime.utcnow')
-    def test_get_function(self, mock_utcnow):
-        mock_utcnow.return_value = 'pAtChEd'
+    @patch('__main__.datetime')
+    def test_get_function(self, mock_dt):
+        mock_dt.utcnow.return_value = 'pAtChEd'
         assert get() == 'pAtChEd' 
 
 if __name__ == '__main__':
